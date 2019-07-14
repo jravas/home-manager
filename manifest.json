@@ -1,7 +1,7 @@
 {
   "name": "home-manager",
   "short_name": "home-manager",
-  "theme_color": "#1976d2",
+  "theme_color": "#2D3540",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "/",
