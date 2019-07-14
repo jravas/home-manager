@@ -1,0 +1,10 @@
+<form [formGroup]="productForm" (ngSubmit)="addProduct()" class="product-form">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Name" formControlName="name" />
+  </mat-form-field>
+
+  <!-- <mat-form-field class="example-full-width">
+    <input type="number" matInput placeholder="Price" formControlName="price" />
+  </mat-form-field> -->
+  <button type="submit" mat-raised-button color="primary">Add product</button>
+</form>

@@ -1,0 +1,11 @@
+<div class="main-title">
+  <h1 class="main-title__title">Products list</h1>
+</div>
+<div class="content-wrapper">
+  <app-product-list
+    [products]="(products | async)?.products"
+  ></app-product-list>
+  <!-- <button class="product-add" mat-fab color="primary" (click)="openDialog()">
+    Primary
+  </button> -->
+</div>

@@ -1,0 +1,7 @@
+.product-item:last-child mat-divider {
+  display: none;
+}
+
+.mat-list {
+  padding-top: 0;
+}
