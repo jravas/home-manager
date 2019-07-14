@@ -1,8 +1,0 @@
-.product-form {
-  display: flex;
-  flex-direction: column;
-}
-
-.product-form > * {
-  width: 100%;
-}
