@@ -187,10 +187,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_navigation_navigation_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/navigation/navigation.component */ "./src/app/components/navigation/navigation.component.ts");
 /* harmony import */ var _services_evenet_emmiter_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./services/evenet-emmiter.service */ "./src/app/services/evenet-emmiter.service.ts");
 /* harmony import */ var _angular_service_worker__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/service-worker */ "./node_modules/@angular/service-worker/fesm5/service-worker.js");
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
-/* harmony import */ var _views_settings_settings_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./views/settings/settings.component */ "./src/app/views/settings/settings.component.ts");
-/* harmony import */ var _views_stock_stock_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./views/stock/stock.component */ "./src/app/views/stock/stock.component.ts");
-
+/* harmony import */ var _views_settings_settings_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./views/settings/settings.component */ "./src/app/views/settings/settings.component.ts");
+/* harmony import */ var _views_stock_stock_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./views/stock/stock.component */ "./src/app/views/stock/stock.component.ts");
 
 
 
@@ -209,8 +207,8 @@ var appRoutes = [
     { path: '', component: _views_home_home_component__WEBPACK_IMPORTED_MODULE_8__["HomeComponent"] },
     { path: 'product', component: _modules_product_views_product_product_component__WEBPACK_IMPORTED_MODULE_6__["ProductComponent"] },
     { path: 'product/:id', component: _modules_product_views_product_single_product_single_component__WEBPACK_IMPORTED_MODULE_7__["ProductSingleComponent"] },
-    { path: 'settings', component: _views_settings_settings_component__WEBPACK_IMPORTED_MODULE_13__["SettingsComponent"] },
-    { path: 'stock', component: _views_stock_stock_component__WEBPACK_IMPORTED_MODULE_14__["StockComponent"] }
+    { path: 'settings', component: _views_settings_settings_component__WEBPACK_IMPORTED_MODULE_12__["SettingsComponent"] },
+    { path: 'stock', component: _views_stock_stock_component__WEBPACK_IMPORTED_MODULE_13__["StockComponent"] }
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -221,8 +219,8 @@ var AppModule = /** @class */ (function () {
                 _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
                 _views_home_home_component__WEBPACK_IMPORTED_MODULE_8__["HomeComponent"],
                 _components_navigation_navigation_component__WEBPACK_IMPORTED_MODULE_9__["NavigationComponent"],
-                _views_settings_settings_component__WEBPACK_IMPORTED_MODULE_13__["SettingsComponent"],
-                _views_stock_stock_component__WEBPACK_IMPORTED_MODULE_14__["StockComponent"]
+                _views_settings_settings_component__WEBPACK_IMPORTED_MODULE_12__["SettingsComponent"],
+                _views_stock_stock_component__WEBPACK_IMPORTED_MODULE_13__["StockComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -231,7 +229,7 @@ var AppModule = /** @class */ (function () {
                 ),
                 _modules_product_product_module__WEBPACK_IMPORTED_MODULE_5__["ProductModule"],
                 _angular_service_worker__WEBPACK_IMPORTED_MODULE_11__["ServiceWorkerModule"].register('ngsw-worker.js', {
-                    enabled: _environments_environment__WEBPACK_IMPORTED_MODULE_12__["environment"].production
+                    enabled: true
                 })
             ],
             providers: [_services_evenet_emmiter_service__WEBPACK_IMPORTED_MODULE_10__["EvenetEmmiterService"]],
