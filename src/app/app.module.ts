@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, InjectionToken } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,7 +11,26 @@ import { ProductModule } from './modules/product/product.module';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { HomeComponent } from './views/home/home.component';
 import { SettingsComponent } from './views/settings/settings.component';
-import { StockComponent } from './views/stock/stock.component';
+import { StockComponent } from './modules/stock/views/stock/stock.component';
+
+import { StoreModule, ActionReducerMap, MetaReducer } from '@ngrx/store';
+import { productsReducer } from './modules/product/store/product.reducer';
+import { stockReducer } from './modules/stock/store/stock.reducer';
+import { localStorageSyncReducer } from './modules/product/store/localStorage';
+
+import { State } from './modules/product/store/product.reducer';
+import { StockSingleComponent } from './modules/stock/views/stock-single/stock-single.component';
+
+const reducers: ActionReducerMap<any> = {
+  products: productsReducer,
+  stock: stockReducer
+};
+
+export const REDUCER_TOKEN = new InjectionToken<ActionReducerMap<State>>(
+  'products'
+);
+
+const metaReducers: Array<MetaReducer<any, any>> = [localStorageSyncReducer];
 
 @NgModule({
   declarations: [
@@ -19,7 +38,8 @@ import { StockComponent } from './views/stock/stock.component';
     NavigationComponent,
     HomeComponent,
     SettingsComponent,
-    StockComponent
+    StockComponent,
+    StockSingleComponent
   ],
   imports: [
     BrowserModule,
@@ -27,9 +47,15 @@ import { StockComponent } from './views/stock/stock.component';
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production
     }),
-    ProductModule
+    ProductModule,
+    StoreModule.forRoot(REDUCER_TOKEN, { metaReducers })
   ],
-  providers: [],
+  providers: [
+    {
+      provide: REDUCER_TOKEN,
+      useValue: reducers
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -1,0 +1,25 @@
+<div class="main-title">
+  <h1 class="main-title__title">Stock</h1>
+</div>
+
+<div class="content-wrapper">
+  <ul class="product-list">
+    <!-- <h3 mat-subheader>Items</h3> -->
+    <li
+      *ngFor="let item of (stock | async).stock"
+      class="product-item"
+      [routerLink]="item.id"
+      button
+    >
+      <div class="product-item-inner">
+        <h4 class="product-item__title">{{ item.name }}</h4>
+        <p class="product-item__date">{{ item.date | date }}</p>
+      </div>
+      <!-- <div
+        class="product-item__actions"
+        [class.product-item__actions--selected]="item.selected"
+        (click)="onChecked($event, item.id)"
+      ></div> -->
+    </li>
+  </ul>
+</div>

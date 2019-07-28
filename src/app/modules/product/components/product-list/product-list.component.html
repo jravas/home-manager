@@ -4,7 +4,6 @@
 </div> -->
 <div class="content-wrapper">
   <ul class="product-list">
-    <!-- <h3 mat-subheader>Items</h3> -->
     <li
       *ngFor="let product of products"
       class="product-item"
@@ -20,7 +19,6 @@
         [class.product-item__actions--selected]="product.selected"
         (click)="onChecked($event, product.id)"
       ></div>
-      <!-- <mat-divider></mat-divider> -->
     </li>
   </ul>
 </div>

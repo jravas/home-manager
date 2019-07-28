@@ -1,10 +1,11 @@
 <div class="main-title">
   <h1 class="main-title__title">{{ product.name }}</h1>
-  <p class="main-title__subtitle">{{ product.date | date }}</p>
-</div>
-<div class="product-list-actions">
-  <button>Add to stock</button>
-  <button (click)="deleteProduct()">Delete</button>
+  <!-- <p class="main-title__subtitle">{{ product.date | date }}</p> -->
+  <div class="main-title__actions">
+    <span>{{ product.date | date }}</span>
+    <button (click)="deleteProduct()">Delete</button>
+    <button (click)="addToStock()">Add to stock</button>
+  </div>
 </div>
 <div class="content-wrapper"></div>
 

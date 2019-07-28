@@ -1,0 +1,22 @@
+<div class="main-title">
+  <h1 class="main-title__title">{{ product.name }}</h1>
+  <!-- <p class="main-title__subtitle">{{ product.date | date }}</p> -->
+  <div class="main-title__actions">
+    <span>{{ product.date | date }}</span>
+    <button>Delete</button>
+    <button>Add to stock</button>
+  </div>
+</div>
+<div class="content-wrapper">
+  <!-- <form
+    *ngIf="isAddNewVIsible"
+    [formGroup]="stockItemForm"
+    (ngSubmit)="addProduct()"
+    class="product-form"
+  > -->
+  <div class="input-item">
+    <label for="price">Price</label>
+    <input type="number" name="price" />
+  </div>
+  <!-- </form> -->
+</div>

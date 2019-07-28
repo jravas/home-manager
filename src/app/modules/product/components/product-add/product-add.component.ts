@@ -48,7 +48,7 @@ export class ProductAddComponent implements OnInit, OnChanges {
     const prev = isAddNewVIsible.previousValue;
     const current = isAddNewVIsible.currentValue;
     if (current) {
-      this.inputElement.nativeElement.focus();
+      // this.inputElement.nativeElement.focus();
     }
   }
 

@@ -1,11 +1,11 @@
 {
-  "name": "home-manager",
+  "name": "Home manager",
   "short_name": "home-manager",
   "theme_color": "#FFC145",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "/",
-  "start_url": "/",
+  "start_url": "https://jravas.github.io/home-manager/",
   "icons": [
     {
       "src": "assets/icons/icon-72x72.png",

@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'normalize.css';
+@import './theme/product-list.component';
 
 html,
 body {
@@ -23,7 +24,7 @@ body {
   /* padding-bottom: 2%;
   margin-bottom: 2%; */
   /* box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.1); */
-  margin: 8px 0 16px 0;
+  margin: 16px 0;
 }
 .main-title__title {
   margin: 0;
@@ -71,6 +72,34 @@ body {
   margin-left: 6px;
   font-size: 12px;
   line-height: 16px;
+}
+
+.main-title__actions {
+  padding: 8px 16px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-top: 0;
+}
+
+.main-title__actions span {
+  font-family: 'Chivo', sans-serif;
+  margin-right: auto;
+  font-size: 12px;
+  line-height: 16px;
+  color: #2a3439;
+}
+
+.main-title__actions button {
+  border: none;
+  margin: 0 4px;
+  padding: 4px 8px;
+  font-size: 10px;
+  text-transform: uppercase;
+  font-family: 'Lato', sans-serif;
+  border-radius: 4px;
+  background: transparent;
+  border: 1px solid;
 }
 
 .content-wrapper {
