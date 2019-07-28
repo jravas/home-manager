@@ -1,11 +1,11 @@
 {
-  "name": "Home Manager",
+  "name": "home-manager",
   "short_name": "home-manager",
-  "theme_color": "#2D3540",
+  "theme_color": "#FFC145",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "/",
-  "start_url": "/home-manager/",
+  "start_url": "/",
   "icons": [
     {
       "src": "assets/icons/icon-72x72.png",
