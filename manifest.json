@@ -4,7 +4,7 @@
   "theme_color": "#FFC145",
   "background_color": "#fafafa",
   "display": "standalone",
-  "scope": "/home-manager/",
+  "scope": "/",
   "start_url": "/home-manager",
   "icons": [
     {
