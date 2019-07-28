@@ -1,20 +1,20 @@
 {
   "configVersion": 1,
-  "timestamp": 1564306410034,
-  "index": "/home-manager/index.html",
+  "timestamp": 1564307060236,
+  "index": "https://jravas.github.io/home-manager/index.html",
   "assetGroups": [
     {
       "name": "app",
       "installMode": "prefetch",
       "updateMode": "prefetch",
       "urls": [
-        "/home-manager/es2015-polyfills.bda95d5896422d031328.js",
-        "/home-manager/favicon.ico",
-        "/home-manager/index.html",
-        "/home-manager/main.5d9aaec6accb61b1e7b8.js",
-        "/home-manager/polyfills.8bbb231b43165d65d357.js",
-        "/home-manager/runtime.26209474bfa8dc87a77c.js",
-        "/home-manager/styles.e3eb33e33d35fea969bc.css"
+        "https://jravas.github.io/home-manager/es2015-polyfills.bda95d5896422d031328.js",
+        "https://jravas.github.io/home-manager/favicon.ico",
+        "https://jravas.github.io/home-manager/index.html",
+        "https://jravas.github.io/home-manager/main.5d9aaec6accb61b1e7b8.js",
+        "https://jravas.github.io/home-manager/polyfills.8bbb231b43165d65d357.js",
+        "https://jravas.github.io/home-manager/runtime.26209474bfa8dc87a77c.js",
+        "https://jravas.github.io/home-manager/styles.e3eb33e33d35fea969bc.css"
       ],
       "patterns": []
     },
@@ -23,37 +23,37 @@
       "installMode": "lazy",
       "updateMode": "prefetch",
       "urls": [
-        "/home-manager/assets/icons/close.svg",
-        "/home-manager/assets/icons/icon-128x128.png",
-        "/home-manager/assets/icons/icon-144x144.png",
-        "/home-manager/assets/icons/icon-152x152.png",
-        "/home-manager/assets/icons/icon-192x192.png",
-        "/home-manager/assets/icons/icon-384x384.png",
-        "/home-manager/assets/icons/icon-512x512.png",
-        "/home-manager/assets/icons/icon-72x72.png",
-        "/home-manager/assets/icons/icon-96x96.png"
+        "https://jravas.github.io/home-manager/assets/icons/close.svg",
+        "https://jravas.github.io/home-manager/assets/icons/icon-128x128.png",
+        "https://jravas.github.io/home-manager/assets/icons/icon-144x144.png",
+        "https://jravas.github.io/home-manager/assets/icons/icon-152x152.png",
+        "https://jravas.github.io/home-manager/assets/icons/icon-192x192.png",
+        "https://jravas.github.io/home-manager/assets/icons/icon-384x384.png",
+        "https://jravas.github.io/home-manager/assets/icons/icon-512x512.png",
+        "https://jravas.github.io/home-manager/assets/icons/icon-72x72.png",
+        "https://jravas.github.io/home-manager/assets/icons/icon-96x96.png"
       ],
       "patterns": []
     }
   ],
   "dataGroups": [],
   "hashTable": {
-    "/home-manager/assets/icons/close.svg": "235d7bc439abc9eac6316887dcc35cc26767b2ac",
-    "/home-manager/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
-    "/home-manager/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
-    "/home-manager/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
-    "/home-manager/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
-    "/home-manager/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
-    "/home-manager/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
-    "/home-manager/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
-    "/home-manager/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
-    "/home-manager/es2015-polyfills.bda95d5896422d031328.js": "1612fe8f7e8e0c856f0885ff179e93363c67834f",
-    "/home-manager/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
-    "/home-manager/index.html": "bb975565505a460963f49d50fd81b677ec8b6490",
-    "/home-manager/main.5d9aaec6accb61b1e7b8.js": "dceb63a6e985b36d1123d6f523045351f5e35e43",
-    "/home-manager/polyfills.8bbb231b43165d65d357.js": "ffa449995bf2eba2ccd0a002417214f7eb75e7b5",
-    "/home-manager/runtime.26209474bfa8dc87a77c.js": "b62956c2192bfe5516d6374e753773901ed50ec5",
-    "/home-manager/styles.e3eb33e33d35fea969bc.css": "416415ddd804b7d459dc921a0fc6a226e2f77012"
+    "https://jravas.github.io/home-manager/assets/icons/close.svg": "235d7bc439abc9eac6316887dcc35cc26767b2ac",
+    "https://jravas.github.io/home-manager/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "https://jravas.github.io/home-manager/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "https://jravas.github.io/home-manager/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "https://jravas.github.io/home-manager/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "https://jravas.github.io/home-manager/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "https://jravas.github.io/home-manager/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "https://jravas.github.io/home-manager/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "https://jravas.github.io/home-manager/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "https://jravas.github.io/home-manager/es2015-polyfills.bda95d5896422d031328.js": "1612fe8f7e8e0c856f0885ff179e93363c67834f",
+    "https://jravas.github.io/home-manager/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
+    "https://jravas.github.io/home-manager/index.html": "1bdf64a1307f4f33a3d10879f376509438443fa3",
+    "https://jravas.github.io/home-manager/main.5d9aaec6accb61b1e7b8.js": "dceb63a6e985b36d1123d6f523045351f5e35e43",
+    "https://jravas.github.io/home-manager/polyfills.8bbb231b43165d65d357.js": "ffa449995bf2eba2ccd0a002417214f7eb75e7b5",
+    "https://jravas.github.io/home-manager/runtime.26209474bfa8dc87a77c.js": "b62956c2192bfe5516d6374e753773901ed50ec5",
+    "https://jravas.github.io/home-manager/styles.e3eb33e33d35fea969bc.css": "416415ddd804b7d459dc921a0fc6a226e2f77012"
   },
   "navigationUrls": [
     {
