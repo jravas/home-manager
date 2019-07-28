@@ -1,14 +1,26 @@
-<mat-list>
-  <!-- <h3 mat-subheader>Items</h3> -->
-  <mat-list-item
-    *ngFor="let product of products"
-    class="product-item"
-    [routerLink]="product.id"
-    button
-    component="a"
-  >
-    <h4 mat-line>{{ product.name }}</h4>
-    <p mat-line>{{ product.date | date }}</p>
-    <mat-divider></mat-divider>
-  </mat-list-item>
-</mat-list>
+<!-- <div class="product-list-actions" *ngIf="selectedProducts">
+  <button>Add to stock</button>
+  <button (click)="deleteSelected()">Delete</button>
+</div> -->
+<div class="content-wrapper">
+  <ul class="product-list">
+    <!-- <h3 mat-subheader>Items</h3> -->
+    <li
+      *ngFor="let product of products"
+      class="product-item"
+      [routerLink]="product.id"
+      button
+    >
+      <div class="product-item-inner">
+        <h4 class="product-item__title">{{ product.name }}</h4>
+        <p class="product-item__date">{{ product.date | date }}</p>
+      </div>
+      <div
+        class="product-item__actions"
+        [class.product-item__actions--selected]="product.selected"
+        (click)="onChecked($event, product.id)"
+      ></div>
+      <!-- <mat-divider></mat-divider> -->
+    </li>
+  </ul>
+</div>

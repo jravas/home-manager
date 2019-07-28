@@ -3,7 +3,9 @@ import { Product } from '../models/product';
 
 enum ProductActions {
   AddProduct = 'product/add',
-  DeleteProduct = 'product/delete'
+  DeleteProduct = 'product/delete',
+  SelectProduct = 'product/select',
+  DeleteSelected = 'product/delete-selected'
 }
 
 export const addProduct = createAction(
@@ -15,3 +17,10 @@ export const deleteProduct = createAction(
   ProductActions.DeleteProduct,
   props<{ id: string }>()
 );
+
+export const selectProduct = createAction(
+  ProductActions.SelectProduct,
+  props<{ id: string }>()
+);
+
+export const deleteSelected = createAction(ProductActions.DeleteSelected);

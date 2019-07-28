@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
-import { EvenetEmmiterService } from 'app/services/evenet-emmiter.service';
+import { EvenetEmmiterService } from '../../services/evenet-emmiter.service';
 
 @Component({
   selector: 'app-navigation',

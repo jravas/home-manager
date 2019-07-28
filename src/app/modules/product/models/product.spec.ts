@@ -2,6 +2,8 @@ import { Product } from './product';
 
 describe('Product', () => {
   it('should create an instance', () => {
-    expect(new Product(1, 'New Product', 99)).toBeTruthy();
+    expect(
+      new Product('21431dsafaf', 'New Product', new Date(), false)
+    ).toBeTruthy();
   });
 });

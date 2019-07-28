@@ -1,48 +1,65 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Store, select } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import {
-  MatDialog,
-  MatDialogConfig,
-  DialogPosition
-} from '@angular/material/dialog';
-import { ProductAddComponent } from '../../components/product-add/product-add.component';
-import { EvenetEmmiterService } from 'app/services/evenet-emmiter.service';
+import { Observable, Subscription } from 'rxjs';
+import { EvenetEmmiterService } from '../../../../services/evenet-emmiter.service';
+import { Product } from '../../models/product';
+import { deleteSelected } from '../../store/product.actions';
 
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
-export class ProductComponent implements OnInit {
+export class ProductComponent implements OnInit, OnDestroy {
   products: Observable<any>;
+  numberOfSelected: number;
+  subscription: Subscription;
+  isMoreOpen = false;
+  isAddNewVIsible = false;
 
   constructor(
     private store: Store<{ products: any }>,
-    private evenetEmmiterService: EvenetEmmiterService,
-    public dialog: MatDialog
+    private evenetEmmiterService: EvenetEmmiterService // public dialog: MatDialog
   ) {
     this.products = this.store.pipe(select('products'));
   }
 
-  openDialog(): void {
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.panelClass = 'add-product-modal';
-    const dialogRef = this.dialog.open(ProductAddComponent, {
-      // width: '100%',
-      // panelClass: 'add-product-modal',
-      backdropClass: 'add-product-modal-wrapper'
-      // data: {name: this.name, animal: this.animal}
+  ngOnInit() {
+    this.products.subscribe(p => {
+      console.log(p);
+      this.numberOfSelected = p.products.filter(s => s.selected).length;
+      console.log(this.numberOfSelected);
     });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
+    this.subscription = this.evenetEmmiterService.addProductEvent.subscribe(
+      (event: Event) => {
+        this.openDialog();
+      }
+    );
+    // this.numberOfSelected.subscribe(e => console.log(e));
   }
 
-  ngOnInit() {
-    this.evenetEmmiterService.addProductEvent.subscribe((event: Event) => {
-      this.openDialog();
-    });
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
+
+  openDialog(): void {
+    this.isAddNewVIsible = true;
+  }
+
+  closeModal() {
+    this.isAddNewVIsible = false;
+  }
+
+  openMore() {
+    this.isMoreOpen = !this.isMoreOpen;
+  }
+
+  getSelectedProducts(products: any) {
+    return products.filter(p => p.selected).length;
+  }
+
+  deleteSelected() {
+    this.store.dispatch(deleteSelected());
+    this.openMore();
   }
 }

@@ -1,32 +1,35 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProductModule } from './modules/product/product.module';
-import { ProductComponent } from './modules/product/views/product/product.component';
-import { ProductSingleComponent } from './modules/product/views/product-single/product-single.component';
-import { HomeComponent } from './views/home/home.component';
-import { NavigationComponent } from './components/navigation/navigation.component';
-import { EvenetEmmiterService } from './services/evenet-emmiter.service';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
-const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'product', component: ProductComponent },
-  { path: 'product/:id', component: ProductSingleComponent }
-];
+import { ProductModule } from './modules/product/product.module';
+
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { HomeComponent } from './views/home/home.component';
+import { SettingsComponent } from './views/settings/settings.component';
+import { StockComponent } from './views/stock/stock.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, NavigationComponent],
+  declarations: [
+    AppComponent,
+    NavigationComponent,
+    HomeComponent,
+    SettingsComponent,
+    StockComponent
+  ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(
-      appRoutes
-      // { enableTracing: true } // <-- debugging purposes only
-    ),
+    AppRoutingModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production
+    }),
     ProductModule
   ],
-  providers: [EvenetEmmiterService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

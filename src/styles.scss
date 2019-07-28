@@ -1,0 +1,93 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'normalize.css';
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: #fbfbfb;
+}
+
+.add-product-modal-wrapper {
+  justify-content: baseline !important;
+}
+.add-product-modal {
+  background: red;
+}
+
+.main-title {
+  // overflow: auto;
+  /* background: #333333; */
+  /* padding-bottom: 2%;
+  margin-bottom: 2%; */
+  /* box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.1); */
+  margin: 8px 0 16px 0;
+}
+.main-title__title {
+  margin: 0;
+  padding: 8px 16px;
+  font-family: 'Chivo', sans-serif;
+  font-size: 28px;
+  font-weight: 900;
+  color: #1f262a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-title__more {
+  min-width: 125px;
+  position: absolute;
+  right: 15px;
+  z-index: 999;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.main-title__more__item {
+  margin: 0;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-family: 'Lato', sans-serif;
+  &:not(:last-child) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}
+
+.main-title__title svg {
+  width: 15px;
+  height: 15px;
+}
+
+.main-title__subtitle {
+  padding: 0 4%;
+  font-family: 'Chivo', sans-serif;
+  color: #2a3439;
+  margin-bottom: 0;
+  margin-top: 0;
+  margin-left: 6px;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.content-wrapper {
+  overflow: auto;
+  background: white;
+  border-radius: 8px;
+  // margin: 6% 4% 22% 4%;
+  margin: 8px 16px;
+  margin-bottom: 80px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.cdk-global-overlay-wrapper {
+  align-items: baseline !important;
+}
+
+.cdk-overlay-pane {
+  max-width: 100% !important;
+  width: 100% !important;
+}
