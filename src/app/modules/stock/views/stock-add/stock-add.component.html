@@ -1,0 +1,24 @@
+<div class="main-title">
+  <h1 class="main-title__title">
+    Add to stock
+  </h1>
+</div>
+<div class="add-product">
+  <form
+    class="add-product__form"
+    [formGroup]="productForm"
+    (ngSubmit)="addProduct()"
+  >
+    <div class="add-product__form__item">
+      <label for="price">Price</label>
+      <input
+        #inputElement
+        name="price"
+        type="number"
+        placeholder="Enter product price"
+        formControlName="price"
+      />
+    </div>
+    <button>Add to stock</button>
+  </form>
+</div>

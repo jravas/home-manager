@@ -11,6 +11,7 @@ import {
   SimpleChange
 } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import * as uuid from 'uuid/v1';
 
@@ -35,7 +36,8 @@ export class ProductAddComponent implements OnInit, OnChanges {
 
   constructor(
     private fb: FormBuilder,
-    private store: Store<{ products: any }>
+    private store: Store<{ products: any }>,
+    private router: Router
   ) {}
 
   ngOnInit() {}
@@ -58,13 +60,14 @@ export class ProductAddComponent implements OnInit, OnChanges {
       new Date(),
       false
     );
-    console.log(product);
+    // console.log(product);
     this.store.dispatch(addProduct(product));
     this.productForm.reset();
+    this.router.navigate(['product']);
   }
 
   generateTag() {
     const formValue = this.productForm.value as ProductFormValues;
-    console.log(formValue.name);
+    // console.log(formValue.name);
   }
 }

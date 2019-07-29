@@ -3,13 +3,13 @@
   <!-- <p class="main-title__subtitle">{{ product.date | date }}</p> -->
   <div class="main-title__actions">
     <span>{{ product.date | date }}</span>
-    <button>Delete</button>
-    <button>Add to stock</button>
+    <button (click)="deleteProduct()">Delete</button>
+    <!-- <button>Add to stock</button> -->
   </div>
 </div>
 <div class="content-wrapper">
   <div class="input-item">
     <label for="price">Price</label>
-    <input type="number" name="price" />
+    <p>{{ product.price }}</p>
   </div>
 </div>

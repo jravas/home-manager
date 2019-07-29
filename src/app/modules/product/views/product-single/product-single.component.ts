@@ -5,9 +5,7 @@ import { Store, select } from '@ngrx/store';
 import { selectProductById } from '../../store/product.selectors';
 import { State } from '../../store/product.reducer';
 import { deleteProduct } from '../../store/product.actions';
-import { addToStock } from '../../../stock/store/stock.actions';
-import { StockItem } from '../../../stock/models/stock-item';
-import * as uuid from 'uuid/v1';
+import { EvenetEmmiterService } from '../../../../services/evenet-emmiter.service';
 
 @Component({
   selector: 'app-product-single',
@@ -21,7 +19,8 @@ export class ProductSingleComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private store: Store<State>,
-    private router: Router
+    private router: Router,
+    private evenetEmmiterService: EvenetEmmiterService
   ) {}
 
   ngOnInit() {
@@ -30,7 +29,6 @@ export class ProductSingleComponent implements OnInit {
       this.store
         .pipe(select(selectProductById, this.id))
         .subscribe(product => (this.product = product));
-      // this.productO.subscribe(t => console.log(t));
     });
   }
 
@@ -38,9 +36,9 @@ export class ProductSingleComponent implements OnInit {
     this.store.dispatch(deleteProduct({ id: this.id }));
     this.router.navigate(['product']);
   }
+
   addToStock() {
-    const stockItem = new StockItem(uuid(), this.product.name, new Date());
-    this.store.dispatch(addToStock(stockItem));
-    this.router.navigate([`stock/${stockItem.id}`]);
+    this.evenetEmmiterService.addProduct(this.product.name);
+    this.router.navigate([`stock-add`]);
   }
 }

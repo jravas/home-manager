@@ -9,6 +9,7 @@ import { StockComponent } from './modules/stock/views/stock/stock.component';
 import { ProductAddComponent } from './modules/product/views/product-add/product-add.component';
 import { ProductSingleComponent } from './modules/product/views/product-single/product-single.component';
 import { StockSingleComponent } from './modules/stock/views/stock-single/stock-single.component';
+import { StockAddComponent } from './modules/stock/views/stock-add/stock-add.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -17,7 +18,8 @@ const appRoutes: Routes = [
   { path: 'product-add', component: ProductAddComponent },
   { path: 'settings', component: SettingsComponent },
   { path: 'stock', component: StockComponent },
-  { path: 'stock/:id', component: StockSingleComponent }
+  { path: 'stock/:id', component: StockSingleComponent },
+  { path: 'stock-add', component: StockAddComponent }
 ];
 
 @NgModule({

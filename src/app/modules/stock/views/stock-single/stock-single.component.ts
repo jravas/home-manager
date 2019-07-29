@@ -4,7 +4,7 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Store, select } from '@ngrx/store';
 import { getFromStockById } from '../../store/stock.selectors';
 import { State } from '../../store/stock.reducer';
-// import { deleteProduct } from '../../store/product.actions';
+import { deleteStockItem } from '../../store/stock.actions';
 @Component({
   selector: 'app-stock-single',
   templateUrl: './stock-single.component.html',
@@ -38,4 +38,9 @@ export class StockSingleComponent implements OnInit {
   //   console.log('test', this.product);
   //   this.store.dispatch(addToStock(this.product));
   // }
+
+  deleteProduct() {
+    this.store.dispatch(deleteStockItem({ id: this.id }));
+    this.router.navigate(['stock']);
+  }
 }

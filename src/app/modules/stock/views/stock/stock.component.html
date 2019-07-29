@@ -7,13 +7,23 @@
     <!-- <h3 mat-subheader>Items</h3> -->
     <li
       *ngFor="let item of (stock | async).stock"
-      class="product-item"
+      class="product-item stock-item"
       [routerLink]="item.id"
       button
     >
       <div class="product-item-inner">
         <h4 class="product-item__title">{{ item.name }}</h4>
-        <p class="product-item__date">{{ item.date | date }}</p>
+        <!-- <p class="product-item__date">{{ item.date | date }}</p> -->
+        <div class="product-item__attribute-wrapper">
+          <div class="product-item__attribute">
+            <p class="product-item__attribute__label">Bought on</p>
+            <p class="product-item__attribute__value">{{ item.date | date }}</p>
+          </div>
+          <div class="product-item__attribute">
+            <p class="product-item__attribute__label">Price</p>
+            <p class="product-item__attribute__value">{{ item.price }} kn</p>
+          </div>
+        </div>
       </div>
       <!-- <div
         class="product-item__actions"
