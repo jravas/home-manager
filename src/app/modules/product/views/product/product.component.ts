@@ -2,7 +2,6 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
 import { EvenetEmmiterService } from '../../../../services/evenet-emmiter.service';
-import { Product } from '../../models/product';
 import { deleteSelected } from '../../store/product.actions';
 
 @Component({
@@ -15,7 +14,7 @@ export class ProductComponent implements OnInit, OnDestroy {
   numberOfSelected: number;
   subscription: Subscription;
   isMoreOpen = false;
-  isAddNewVIsible = false;
+  // isAddNewVIsible = false;
 
   constructor(
     private store: Store<{ products: any }>,
@@ -28,11 +27,10 @@ export class ProductComponent implements OnInit, OnDestroy {
     this.products.subscribe(p => {
       console.log(p);
       this.numberOfSelected = p.products.filter(s => s.selected).length;
-      console.log(this.numberOfSelected);
     });
     this.subscription = this.evenetEmmiterService.addProductEvent.subscribe(
       (event: Event) => {
-        this.openDialog();
+        // this.openDialog();
       }
     );
     // this.numberOfSelected.subscribe(e => console.log(e));
@@ -42,13 +40,13 @@ export class ProductComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  openDialog(): void {
-    this.isAddNewVIsible = true;
-  }
+  // openDialog(): void {
+  //   this.isAddNewVIsible = true;
+  // }
 
-  closeModal() {
-    this.isAddNewVIsible = false;
-  }
+  // closeModal() {
+  //   this.isAddNewVIsible = false;
+  // }
 
   openMore() {
     this.isMoreOpen = !this.isMoreOpen;

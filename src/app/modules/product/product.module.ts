@@ -8,7 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ProductComponent } from './views/product/product.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
-import { ProductAddComponent } from './components/product-add/product-add.component';
+import { ProductAddComponent } from './views/product-add/product-add.component';
 import { ProductSingleComponent } from './views/product-single/product-single.component';
 
 @NgModule({
@@ -24,7 +24,6 @@ import { ProductSingleComponent } from './views/product-single/product-single.co
     ReactiveFormsModule,
     BrowserAnimationsModule
   ],
-  exports: [ProductComponent, ProductSingleComponent],
-  entryComponents: [ProductAddComponent]
+  exports: [ProductComponent, ProductSingleComponent]
 })
 export class ProductModule {}

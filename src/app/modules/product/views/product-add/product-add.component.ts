@@ -25,11 +25,9 @@ interface ProductFormValues {
 @Component({
   selector: 'app-product-add',
   templateUrl: './product-add.component.html',
-  styleUrls: ['./product-add.component.css']
+  styleUrls: ['./product-add.component.scss']
 })
 export class ProductAddComponent implements OnInit, OnChanges {
-  @Input() isAddNewVIsible;
-  @Output() closeAddNew = new EventEmitter<boolean>();
   @ViewChild('inputElement') inputElement: ElementRef;
   productForm = this.fb.group({
     name: ['']
@@ -40,9 +38,8 @@ export class ProductAddComponent implements OnInit, OnChanges {
     private store: Store<{ products: any }>
   ) {}
 
-  ngOnInit() {
-    //this.inputElement.nativeElement.focus();
-  }
+  ngOnInit() {}
+
   ngOnChanges(channges: SimpleChanges) {
     const isAddNewVIsible = channges.isAddNewVIsible;
     const prev = isAddNewVIsible.previousValue;
@@ -64,6 +61,10 @@ export class ProductAddComponent implements OnInit, OnChanges {
     console.log(product);
     this.store.dispatch(addProduct(product));
     this.productForm.reset();
-    this.closeAddNew.emit(false);
+  }
+
+  generateTag() {
+    const formValue = this.productForm.value as ProductFormValues;
+    console.log(formValue.name);
   }
 }

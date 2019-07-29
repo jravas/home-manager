@@ -1,25 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, InjectionToken } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { StoreModule, ActionReducerMap, MetaReducer } from '@ngrx/store';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
+// modules
+import { AppRoutingModule } from './app-routing.module';
 import { ProductModule } from './modules/product/product.module';
+import { StockModule } from './modules/stock/stock.module';
 
+// components
+import { AppComponent } from './app.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { HomeComponent } from './views/home/home.component';
 import { SettingsComponent } from './views/settings/settings.component';
-import { StockComponent } from './modules/stock/views/stock/stock.component';
 
-import { StoreModule, ActionReducerMap, MetaReducer } from '@ngrx/store';
+//  store
 import { productsReducer } from './modules/product/store/product.reducer';
 import { stockReducer } from './modules/stock/store/stock.reducer';
-import { localStorageSyncReducer } from './modules/product/store/localStorage';
-
 import { State } from './modules/product/store/product.reducer';
-import { StockSingleComponent } from './modules/stock/views/stock-single/stock-single.component';
+import { localStorageSyncReducer } from './modules/product/store/localStorage';
 
 const reducers: ActionReducerMap<any> = {
   products: productsReducer,
@@ -37,9 +37,7 @@ const metaReducers: Array<MetaReducer<any, any>> = [localStorageSyncReducer];
     AppComponent,
     NavigationComponent,
     HomeComponent,
-    SettingsComponent,
-    StockComponent,
-    StockSingleComponent
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
@@ -47,8 +45,9 @@ const metaReducers: Array<MetaReducer<any, any>> = [localStorageSyncReducer];
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production
     }),
+    StoreModule.forRoot(REDUCER_TOKEN, { metaReducers }),
     ProductModule,
-    StoreModule.forRoot(REDUCER_TOKEN, { metaReducers })
+    StockModule
   ],
   providers: [
     {

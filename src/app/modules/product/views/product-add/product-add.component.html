@@ -1,0 +1,24 @@
+<div class="main-title">
+  <h1 class="main-title__title">
+    Add to list
+  </h1>
+</div>
+<div class="add-product">
+  <form
+    class="add-product__form"
+    [formGroup]="productForm"
+    (ngSubmit)="addProduct()"
+  >
+    <div class="add-product__form__item">
+      <label for="name">Product name</label>
+      <input
+        #inputElement
+        name="name"
+        placeholder="Enter product name"
+        formControlName="name"
+        (keyup)="generateTag()"
+      />
+    </div>
+    <button>Add product</button>
+  </form>
+</div>

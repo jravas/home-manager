@@ -19,7 +19,7 @@ export class NavigationComponent implements OnInit {
     // });
   }
 
-  openModal() {
-    this.eventEmiterService.addProduct();
-  }
+  // openModal() {
+  //   this.eventEmiterService.addProduct();
+  // }
 }
