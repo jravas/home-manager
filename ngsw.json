@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1564439514945,
+  "timestamp": 1566665930057,
   "index": "https://jravas.github.io/home-manager/index.html",
   "assetGroups": [
     {
@@ -11,10 +11,10 @@
         "https://jravas.github.io/home-manager/es2015-polyfills.bda95d5896422d031328.js",
         "https://jravas.github.io/home-manager/favicon.ico",
         "https://jravas.github.io/home-manager/index.html",
-        "https://jravas.github.io/home-manager/main.713bf7ec6c95149df232.js",
+        "https://jravas.github.io/home-manager/main.f00a26497c276e470ee0.js",
         "https://jravas.github.io/home-manager/polyfills.8bbb231b43165d65d357.js",
         "https://jravas.github.io/home-manager/runtime.26209474bfa8dc87a77c.js",
-        "https://jravas.github.io/home-manager/styles.4f275e84f85ddde6e9f1.css"
+        "https://jravas.github.io/home-manager/styles.5334b0ff5f6863f51619.css"
       ],
       "patterns": []
     },
@@ -49,11 +49,11 @@
     "https://jravas.github.io/home-manager/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "https://jravas.github.io/home-manager/es2015-polyfills.bda95d5896422d031328.js": "1612fe8f7e8e0c856f0885ff179e93363c67834f",
     "https://jravas.github.io/home-manager/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
-    "https://jravas.github.io/home-manager/index.html": "9c18947d1e5dae3d57ef3dd349c5e91221452712",
-    "https://jravas.github.io/home-manager/main.713bf7ec6c95149df232.js": "c952f14426ff0f9f69158cb4e1de05954b72ed79",
+    "https://jravas.github.io/home-manager/index.html": "d23c1dcf99f47ea22d43685c1e1e1b78bb1adf65",
+    "https://jravas.github.io/home-manager/main.f00a26497c276e470ee0.js": "58a19eb9b1592b0c3d60c0540021399f75885cda",
     "https://jravas.github.io/home-manager/polyfills.8bbb231b43165d65d357.js": "ffa449995bf2eba2ccd0a002417214f7eb75e7b5",
     "https://jravas.github.io/home-manager/runtime.26209474bfa8dc87a77c.js": "b62956c2192bfe5516d6374e753773901ed50ec5",
-    "https://jravas.github.io/home-manager/styles.4f275e84f85ddde6e9f1.css": "dd1aa69f3508bfafd5192043e2272fe7be518daa"
+    "https://jravas.github.io/home-manager/styles.5334b0ff5f6863f51619.css": "1a5e46e610e95d79d189f206a713c43f48f0b5d4"
   },
   "navigationUrls": [
     {
