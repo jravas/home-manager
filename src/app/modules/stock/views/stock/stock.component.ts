@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { Subscription } from 'rxjs';
+import { StockItem } from '../../models/stock-item';
+import { State } from '../../store/stock.reducer';
 
 @Component({
   selector: 'app-stock',
@@ -8,11 +10,14 @@ import { Observable } from 'rxjs';
   styleUrls: ['./stock.component.scss']
 })
 export class StockComponent implements OnInit {
-  stock: Observable<any>;
+  stocksSubscription: Subscription;
+  stockItems: StockItem[];
 
-  constructor(public store: Store<any>) {
-    this.stock = this.store.pipe(select('stock'));
+  constructor(public store: Store<State>) {}
+
+  ngOnInit() {
+    this.stocksSubscription = this.store
+      .pipe(select('stock'))
+      .subscribe((s: State) => (this.stockItems = s.stock));
   }
-
-  ngOnInit() {}
 }

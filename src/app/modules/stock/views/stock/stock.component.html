@@ -6,7 +6,7 @@
   <ul class="product-list">
     <!-- <h3 mat-subheader>Items</h3> -->
     <li
-      *ngFor="let item of (stock | async).stock"
+      *ngFor="let item of stockItems"
       class="product-item stock-item"
       [routerLink]="item.id"
       button
@@ -25,11 +25,6 @@
           </div>
         </div>
       </div>
-      <!-- <div
-        class="product-item__actions"
-        [class.product-item__actions--selected]="item.selected"
-        (click)="onChecked($event, item.id)"
-      ></div> -->
     </li>
   </ul>
 </div>

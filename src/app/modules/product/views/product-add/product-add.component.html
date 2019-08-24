@@ -12,12 +12,24 @@
     <div class="add-product__form__item">
       <label for="name">Product name</label>
       <input
-        #inputElement
         name="name"
         placeholder="Enter product name"
         formControlName="name"
         (keyup)="generateTag()"
       />
+    </div>
+    <div class="add-product__form__item">
+      <label for="name">Product tag</label>
+      <input name="tag" formControlName="tag" />
+    </div>
+    <div>
+      <button
+        class="btn-small"
+        *ngFor="let product of products"
+        (click)="selectTag($event, product)"
+      >
+        {{ product.tag }}
+      </button>
     </div>
     <button>Add product</button>
   </form>

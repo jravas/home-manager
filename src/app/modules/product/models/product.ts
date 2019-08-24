@@ -2,8 +2,7 @@ export class Product {
   constructor(
     public id: string,
     public name: string,
-    // public price: number,
-    public date: number
-  ) // public selected: boolean
-  {}
+    public tag: string,
+    public date: number // public selected: boolean
+  ) {}
 }

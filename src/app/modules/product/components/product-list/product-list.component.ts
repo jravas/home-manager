@@ -26,7 +26,7 @@ export class ProductListComponent implements OnInit {
     })) as ProductsChecked;
   }
 
-  onChecked(e: any, id: string) {
+  onChecked(e: MouseEvent, id: string) {
     e.preventDefault();
     e.stopPropagation();
     this.selectedProducts = [];

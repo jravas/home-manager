@@ -36,15 +36,16 @@ export class StockAddComponent implements OnInit {
 
   addProduct() {
     const formValue = this.productForm.value as StockFormValues;
+    const { name, tag } = this.evenetEmmiterService.product;
     const stockItem = new StockItem(
       uuid(),
-      this.evenetEmmiterService.product,
+      name,
+      tag,
       formValue.price,
       Date.now()
     );
 
     this.store.dispatch(addToStock(stockItem));
     this.router.navigate(['stock']);
-    // this.productForm.reset();
   }
 }

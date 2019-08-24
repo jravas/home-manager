@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-// import { Observable } from 'rxjs';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Store, select } from '@ngrx/store';
 import { selectProductById } from '../../store/product.selectors';
@@ -38,7 +37,7 @@ export class ProductSingleComponent implements OnInit {
   }
 
   addToStock() {
-    this.evenetEmmiterService.addProduct(this.product.name);
+    this.evenetEmmiterService.addProduct(this.product);
     this.router.navigate([`stock-add`]);
   }
 }

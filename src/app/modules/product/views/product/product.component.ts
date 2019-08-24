@@ -1,28 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
 import { deleteSelected } from '../../store/product.actions';
 import { Product } from '../../models/product';
-
+import { State } from '../../store/product.reducer';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
-export class ProductComponent implements OnInit {
-  productsObservable: Observable<any>;
-  products: any;
+export class ProductComponent implements OnInit, OnDestroy {
+  productsSubscription: Subscription;
+  products: Product[];
   numberOfSelected: number;
   isMoreOpen = false;
 
-  constructor(private store: Store<{ products: any }>) {
-    this.productsObservable = this.store.pipe(select('products'));
+  constructor(private store: Store<State>) {
+    // this.productsObservable = this.store.pipe(select('products'));
   }
 
   ngOnInit() {
-    this.productsObservable.subscribe(p => {
-      this.products = p.products;
-    });
+    this.productsSubscription = this.store
+      .pipe(select('products'))
+      .subscribe((p: State) => {
+        this.products = p.products;
+      });
+  }
+
+  ngOnDestroy() {
+    this.productsSubscription.unsubscribe();
   }
 
   openMore() {
