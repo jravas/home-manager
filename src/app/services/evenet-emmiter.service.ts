@@ -4,12 +4,16 @@ import { Injectable, EventEmitter } from '@angular/core';
   providedIn: 'root'
 })
 export class EvenetEmmiterService {
-  addProductEvent = new EventEmitter();
+  showActionsEvent = new EventEmitter();
   product: any;
   constructor() {}
 
   addProduct(product: any) {
     this.product = product;
     // this.addProductEvent.emit(product);
+  }
+
+  showActions() {
+    this.showActionsEvent.emit();
   }
 }

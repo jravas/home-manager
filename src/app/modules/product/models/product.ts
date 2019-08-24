@@ -3,7 +3,7 @@ export class Product {
     public id: string,
     public name: string,
     // public price: number,
-    public date: Date,
-    public selected: boolean
-  ) {}
+    public date: number
+  ) // public selected: boolean
+  {}
 }

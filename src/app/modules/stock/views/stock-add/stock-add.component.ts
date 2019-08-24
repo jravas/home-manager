@@ -40,7 +40,7 @@ export class StockAddComponent implements OnInit {
       uuid(),
       this.evenetEmmiterService.product,
       formValue.price,
-      new Date()
+      Date.now()
     );
 
     this.store.dispatch(addToStock(stockItem));

@@ -1,8 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
 
-import { selectProduct } from '../../store/product.actions';
 import { State } from '../../store/product.reducer';
+import { Product } from '../../models/product';
+
+interface ProductsChecked extends Product {
+  selected: boolean;
+}
 
 @Component({
   selector: 'app-product-list',
@@ -11,17 +15,32 @@ import { State } from '../../store/product.reducer';
 })
 export class ProductListComponent implements OnInit {
   @Input() products;
+  selectedProducts = [];
 
   constructor(private store: Store<State>) {}
 
   ngOnInit() {
-    console.log(this.products);
+    this.products = this.products.map((p: Product) => ({
+      ...p,
+      selected: false
+    })) as ProductsChecked;
   }
 
   onChecked(e: any, id: string) {
     e.preventDefault();
     e.stopPropagation();
-    this.store.dispatch(selectProduct({ id }));
+    this.selectedProducts = [];
+
+    this.products = this.products.map((p: ProductsChecked) => {
+      if (p.id === id) {
+        p = { ...p, selected: !p.selected };
+      }
+
+      if (p.selected) {
+        this.selectedProducts.push(p.id);
+      }
+      return p;
+    });
   }
 
   // deleteSelected() {

@@ -1,7 +1,7 @@
 <div class="main-title">
   <h1 class="main-title__title">
     Products list
-    <svg
+    <!-- <svg
       (click)="openMore()"
       version="1.1"
       id="Capa_1"
@@ -29,32 +29,17 @@
           />
         </g>
       </g>
-    </svg>
+    </svg> -->
   </h1>
   <div class="main-title__more" *ngIf="isMoreOpen" (blur)="openMore()">
     <p class="main-title__more__item">Select All</p>
-    <p
-      class="main-title__more__item"
-      *ngIf="getSelectedProducts((products | async)?.products)"
-    >
+    <p class="main-title__more__item">
       Add to stock
     </p>
-    <p
-      class="main-title__more__item"
-      *ngIf="getSelectedProducts((products | async)?.products)"
-      (click)="deleteSelected()"
-    >
+    <p class="main-title__more__item" (click)="deleteSelected()">
       Delete
     </p>
   </div>
 </div>
 
-<app-product-list [products]="(products | async)?.products"></app-product-list>
-<!-- <button class="product-add" mat-fab color="primary" (click)="openDialog()">
-    Primary
-  </button> -->
-
-<!-- <app-product-add
-  [isAddNewVIsible]="isAddNewVIsible"
-  (closeAddNew)="closeModal()"
-></app-product-add> -->
+<app-product-list [products]="sortProducts(products)"></app-product-list>

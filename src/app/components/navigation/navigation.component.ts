@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, NavigationStart } from '@angular/router';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { EvenetEmmiterService } from '../../services/evenet-emmiter.service';
 
 @Component({
@@ -7,17 +8,22 @@ import { EvenetEmmiterService } from '../../services/evenet-emmiter.service';
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.css']
 })
-export class NavigationComponent implements OnInit {
+export class NavigationComponent implements OnInit, OnDestroy {
+  subscription: Subscription;
   constructor(
     private router: Router,
     private eventEmiterService: EvenetEmmiterService
   ) {}
 
   ngOnInit() {
-    // this.router.events.subscribe((event: Event) => {
-    //   console.log(event);
-    // });
+    this.subscription = this.eventEmiterService.showActionsEvent.subscribe(
+      e => {
+        console.log('bla');
+      }
+    );
   }
+
+  ngOnDestroy() {}
 
   // openModal() {
   //   this.eventEmiterService.addProduct();

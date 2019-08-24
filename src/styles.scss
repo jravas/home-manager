@@ -2,30 +2,14 @@
 @import 'normalize.css';
 @import './theme/product-list.component';
 
-html,
-body {
-  height: 100%;
-}
-
 body {
   background: #fbfbfb;
 }
 
-.add-product-modal-wrapper {
-  justify-content: baseline !important;
-}
-.add-product-modal {
-  background: red;
-}
-
 .main-title {
-  // overflow: auto;
-  /* background: #333333; */
-  /* padding-bottom: 2%;
-  margin-bottom: 2%; */
-  /* box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.1); */
   margin: 16px 0;
 }
+
 .main-title__title {
   margin: 0;
   padding: 8px 16px;
@@ -111,16 +95,6 @@ body {
   margin-bottom: 80px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
 }
-
-.cdk-global-overlay-wrapper {
-  align-items: baseline !important;
-}
-
-.cdk-overlay-pane {
-  max-width: 100% !important;
-  width: 100% !important;
-}
-
 // product and stock add
 .add-product {
   overflow: auto;

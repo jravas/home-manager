@@ -1,10 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import {
-  addProduct,
-  deleteProduct,
-  selectProduct,
-  deleteSelected
-} from './product.actions';
+import { addProduct, deleteProduct, deleteSelected } from './product.actions';
 import { Product } from '../models/product';
 
 export interface State {
@@ -27,17 +22,8 @@ export const productsReducer = createReducer(
     );
     return state;
   }),
-  on(selectProduct, (state, actions) => {
-    state.products = state.products.map(product => {
-      if (product.id === actions.id) {
-        product.selected = !product.selected;
-      }
-      return product;
-    });
-    return state;
-  }),
-  on(deleteSelected, state => {
-    state.products = state.products.filter(p => !p.selected);
+  on(deleteSelected, (state, actions) => {
+    // state.products
     return state;
   })
 );

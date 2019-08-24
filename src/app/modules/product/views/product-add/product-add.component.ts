@@ -1,15 +1,4 @@
-import {
-  Component,
-  OnInit,
-  EventEmitter,
-  Input,
-  Output,
-  ViewChild,
-  ElementRef,
-  OnChanges,
-  SimpleChanges,
-  SimpleChange
-} from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
@@ -28,7 +17,7 @@ interface ProductFormValues {
   templateUrl: './product-add.component.html',
   styleUrls: ['./product-add.component.scss']
 })
-export class ProductAddComponent implements OnInit, OnChanges {
+export class ProductAddComponent implements OnInit {
   @ViewChild('inputElement') inputElement: ElementRef;
   productForm = this.fb.group({
     name: ['']
@@ -42,25 +31,9 @@ export class ProductAddComponent implements OnInit, OnChanges {
 
   ngOnInit() {}
 
-  ngOnChanges(channges: SimpleChanges) {
-    const isAddNewVIsible = channges.isAddNewVIsible;
-    const prev = isAddNewVIsible.previousValue;
-    const current = isAddNewVIsible.currentValue;
-    if (current) {
-      // this.inputElement.nativeElement.focus();
-    }
-  }
-
   addProduct() {
     const formValue = this.productForm.value as ProductFormValues;
-    const product = new Product(
-      uuid(),
-      formValue.name,
-      // formValue.price,
-      new Date(),
-      false
-    );
-    // console.log(product);
+    const product = new Product(uuid(), formValue.name, Date.now());
     this.store.dispatch(addProduct(product));
     this.productForm.reset();
     this.router.navigate(['product']);
