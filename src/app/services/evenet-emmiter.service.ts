@@ -5,6 +5,7 @@ import { Injectable, EventEmitter } from '@angular/core';
 })
 export class EvenetEmmiterService {
   showActionsEvent = new EventEmitter();
+  submitFormEvent = new EventEmitter();
   product: any;
   constructor() {}
 
@@ -15,5 +16,9 @@ export class EvenetEmmiterService {
 
   showActions() {
     this.showActionsEvent.emit();
+  }
+
+  submitForm() {
+    this.submitFormEvent.emit();
   }
 }

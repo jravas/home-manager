@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import * as uuid from 'uuid/v1';
@@ -20,8 +20,8 @@ interface StockFormValues {
   templateUrl: './stock-add.component.html',
   styleUrls: ['./stock-add.component.scss']
 })
-export class StockAddComponent implements OnInit {
-  subscription: Subscription;
+export class StockAddComponent implements OnInit, OnDestroy {
+  eventSubscription: Subscription;
   productForm = this.fb.group({
     price: ['']
   });
@@ -32,7 +32,15 @@ export class StockAddComponent implements OnInit {
     private router: Router
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.eventSubscription = this.evenetEmmiterService.submitFormEvent.subscribe(
+      () => this.addProduct()
+    );
+  }
+
+  ngOnDestroy() {
+    this.eventSubscription.unsubscribe();
+  }
 
   addProduct() {
     const formValue = this.productForm.value as StockFormValues;

@@ -9,28 +9,47 @@
     [formGroup]="productForm"
     (ngSubmit)="addProduct()"
   >
-    <div class="add-product__form__item">
-      <label for="name">Product name</label>
+    <div class="form-item">
+      <label class="form-item__label" for="name">Product name</label>
       <input
         name="name"
-        placeholder="Enter product name"
+        autocomplete="off"
         formControlName="name"
         (keyup)="generateTag()"
+        class="form-item__input"
       />
     </div>
-    <div class="add-product__form__item">
-      <label for="name">Product tag</label>
-      <input name="tag" formControlName="tag" />
+    <div class="form-item">
+      <label class="form-item__label" for="name">Suggested tag</label>
+      <div class="form-item__tags">
+        <button
+          class="btn-small"
+          *ngFor="let product of products"
+          (click)="selectTag($event, product)"
+        >
+          {{ product.tag }}
+        </button>
+      </div>
     </div>
-    <div>
-      <button
-        class="btn-small"
-        *ngFor="let product of products"
-        (click)="selectTag($event, product)"
-      >
-        {{ product.tag }}
-      </button>
+    <div class="form-item">
+      <label for="name" class="form-item__label">Product tag</label>
+      <input
+        name="tag"
+        autocomplete="off"
+        formControlName="tag"
+        class="form-item__input"
+      />
     </div>
-    <button>Add product</button>
+    <div class="form-item">
+      <label class="form-item__label" for="name">Quantity</label>
+      <input
+        name="quantity"
+        type="number"
+        autocomplete="off"
+        formControlName="quantity"
+        class="form-item__input"
+        min="1"
+      />
+    </div>
   </form>
 </div>

@@ -9,15 +9,15 @@
     [formGroup]="productForm"
     (ngSubmit)="addProduct()"
   >
-    <div class="add-product__form__item">
-      <label for="price">Price</label>
+    <div class="form-item">
+      <label class="form-item__label" for="price">Price</label>
       <input
         name="price"
         type="number"
         placeholder="Enter product price"
         formControlName="price"
+        class="form-item__input"
       />
     </div>
-    <button>Add to stock</button>
   </form>
 </div>
