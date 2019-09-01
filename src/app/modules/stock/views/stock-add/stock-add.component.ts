@@ -44,12 +44,13 @@ export class StockAddComponent implements OnInit, OnDestroy {
 
   addProduct() {
     const formValue = this.productForm.value as StockFormValues;
-    const { name, tag } = this.evenetEmmiterService.product;
+    const { name, tag, quantity } = this.evenetEmmiterService.product;
     const stockItem = new StockItem(
       uuid(),
       name,
       tag,
       formValue.price,
+      quantity,
       Date.now()
     );
 
