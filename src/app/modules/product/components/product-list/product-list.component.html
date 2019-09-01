@@ -10,15 +10,15 @@
       [routerLink]="product.id"
       button
     >
-      <div class="product-item-inner">
-        <h4 class="product-item__title">{{ product.name }}</h4>
-        <p class="product-item__date">{{ product.date | date }}</p>
-      </div>
       <div
         class="product-item__actions"
         [class.product-item__actions--selected]="product.selected"
         (click)="onChecked($event, product.id)"
       ></div>
+      <div class="product-item-inner">
+        <h4 class="product-item__title">{{ product.name }}</h4>
+        <p class="product-item__date">{{ product.date | date }}</p>
+      </div>
     </li>
   </ul>
 </div>

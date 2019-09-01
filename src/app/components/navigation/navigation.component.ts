@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewEncapsulation } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { EvenetEmmiterService } from '../../services/evenet-emmiter.service';
@@ -11,7 +11,8 @@ enum ActiveRoute {
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
-  styleUrls: ['./navigation.component.css']
+  styleUrls: ['./navigation.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class NavigationComponent implements OnInit, OnDestroy {
   rotuerSubscription: Subscription;

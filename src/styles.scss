@@ -2,13 +2,17 @@
 @import 'normalize.css';
 @import './theme/product-list.component';
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   background: #fbfbfb;
 }
 
 .main-title {
-  // margin: 16px 0;
-  margin-top: 8px;
+  padding: 8px 0;
 }
 
 .main-title__title {
@@ -102,19 +106,23 @@ body {
 .content-wrapper {
   overflow: auto;
   background: white;
-  border-radius: 8px;
-  // margin: 6% 4% 22% 4%;
-  margin: 8px 16px;
-  margin-bottom: 80px;
+  flex: 1;
+  // border-radius: 8px;
+  // margin: 8px 16px;
+  border-top-right-radius: 40px;
+  // margin-bottom: 80px;
+  margin-bottom: 53px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
 }
 // product and stock add
 .add-product {
+  flex: 1;
   overflow: auto;
   background: white;
-  border-radius: 8px;
-  margin: 0 16px;
-  margin-bottom: 80px;
+  // border-radius: 8px;
+  border-top-right-radius: 40px;
+  // margin: 0 16px;
+  margin-bottom: 53px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
 }
 

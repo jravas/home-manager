@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewEncapsulation } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
 import { deleteSelected } from '../../store/product.actions';
@@ -7,7 +7,8 @@ import { State } from '../../store/product.reducer';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
-  styleUrls: ['./product.component.css']
+  styleUrls: ['./product.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ProductComponent implements OnInit, OnDestroy {
   productsSubscription: Subscription;
