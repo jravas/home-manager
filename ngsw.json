@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1567338265653,
+  "timestamp": 1569574253676,
   "index": "/home-manager/index.html",
   "assetGroups": [
     {
@@ -53,7 +53,7 @@
     "/home-manager/assets/icons/save.svg": "4acafd54566ec1bbc8abafb256f55bd86a3e495b",
     "/home-manager/es2015-polyfills.bda95d5896422d031328.js": "1612fe8f7e8e0c856f0885ff179e93363c67834f",
     "/home-manager/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
-    "/home-manager/index.html": "f9ee26889e00fd2d8286e70e3f1c4740d4de494a",
+    "/home-manager/index.html": "c84bc12674020f3ce4786f5a957bd433bd59d332",
     "/home-manager/main.3e73caae413d1fb70ef0.js": "8ec72285d9da6d29d7ab45daee23e6b5d1b29dcb",
     "/home-manager/polyfills.8bbb231b43165d65d357.js": "ffa449995bf2eba2ccd0a002417214f7eb75e7b5",
     "/home-manager/runtime.26209474bfa8dc87a77c.js": "b62956c2192bfe5516d6374e753773901ed50ec5",
