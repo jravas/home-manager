@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1571349675917,
+  "timestamp": 1571351086918,
   "index": "https://jravas.github.io/home-manager/index.html",
   "assetGroups": [
     {
@@ -11,7 +11,7 @@
         "https://jravas.github.io/home-manager/es2015-polyfills.bda95d5896422d031328.js",
         "https://jravas.github.io/home-manager/favicon.ico",
         "https://jravas.github.io/home-manager/index.html",
-        "https://jravas.github.io/home-manager/main.c773fb33a2f9c2375b0f.js",
+        "https://jravas.github.io/home-manager/main.0acfc5bd9d2ee19f93b6.js",
         "https://jravas.github.io/home-manager/polyfills.8bbb231b43165d65d357.js",
         "https://jravas.github.io/home-manager/runtime.26209474bfa8dc87a77c.js",
         "https://jravas.github.io/home-manager/styles.041be731da831d0aa199.css"
@@ -53,8 +53,8 @@
     "https://jravas.github.io/home-manager/assets/icons/save.svg": "4acafd54566ec1bbc8abafb256f55bd86a3e495b",
     "https://jravas.github.io/home-manager/es2015-polyfills.bda95d5896422d031328.js": "1612fe8f7e8e0c856f0885ff179e93363c67834f",
     "https://jravas.github.io/home-manager/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
-    "https://jravas.github.io/home-manager/index.html": "c41138fd4fe919d5181cc3de6a932639ed2cbc71",
-    "https://jravas.github.io/home-manager/main.c773fb33a2f9c2375b0f.js": "3c63083eb378d10da2eee2bff6666dd01af0f349",
+    "https://jravas.github.io/home-manager/index.html": "27f2c85a40392c72272e9e93c17718ce2954a7cf",
+    "https://jravas.github.io/home-manager/main.0acfc5bd9d2ee19f93b6.js": "3b11858c8381c2e753d5e54ccdd4e7d9d52bd561",
     "https://jravas.github.io/home-manager/polyfills.8bbb231b43165d65d357.js": "ffa449995bf2eba2ccd0a002417214f7eb75e7b5",
     "https://jravas.github.io/home-manager/runtime.26209474bfa8dc87a77c.js": "b62956c2192bfe5516d6374e753773901ed50ec5",
     "https://jravas.github.io/home-manager/styles.041be731da831d0aa199.css": "7d9e8ab0f183960220a94ebaff7052fd84ba7842"
