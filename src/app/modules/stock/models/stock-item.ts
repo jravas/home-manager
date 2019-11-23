@@ -5,7 +5,9 @@ export class StockItem {
     public tag: string,
     public price: number,
     public quantity: number,
-    public date: number
+    public date: number,
+    public amount?: number,
+    public unit?: string
   ) {}
 }
 
@@ -16,4 +18,6 @@ export interface IStockItem {
   price: number;
   quantity: number;
   date: number;
+  amount?: number;
+  unit?: string;
 }

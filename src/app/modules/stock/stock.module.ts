@@ -8,13 +8,16 @@ import { StockComponent } from './views/stock/stock.component';
 import { StockSingleComponent } from './views/stock-single/stock-single.component';
 import { StockAddComponent } from './views/stock-add/stock-add.component';
 
+import { SharedComponentsModule } from 'src/app/components/shared-components.module';
+
 @NgModule({
   declarations: [StockComponent, StockSingleComponent, StockAddComponent],
   imports: [
     CommonModule,
     RouterModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    SharedComponentsModule
   ],
   exports: [StockComponent, StockSingleComponent]
 })

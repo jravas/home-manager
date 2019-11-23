@@ -1,0 +1,26 @@
+<li class="product-item stock-item" [routerLink]="['/stock', item.id]" button>
+  <div class="product-item-inner">
+    <h4 class="product-item__title">{{ item.name }}</h4>
+    <!-- <p class="product-item__date">{{ item.date | date }}</p> -->
+    <div class="product-item__attribute-wrapper">
+      <div class="product-item__attribute">
+        <p class="product-item__attribute__label">Bought on</p>
+        <p class="product-item__attribute__value">{{ item.date | date }}</p>
+      </div>
+      <div class="product-item__attribute">
+        <p class="product-item__attribute__label">Price</p>
+        <p class="product-item__attribute__value">{{ item.price }} kn</p>
+      </div>
+      <div class="product-item__attribute" *ngIf="item.amount">
+        <p class="product-item__attribute__label">Amount</p>
+        <p class="product-item__attribute__value">
+          {{ item.amount }} {{ item.unit }}
+        </p>
+      </div>
+      <div class="product-item__attribute">
+        <p class="product-item__attribute__label">Quantity</p>
+        <p class="product-item__attribute__value">{{ item.quantity }}</p>
+      </div>
+    </div>
+  </div>
+</li>

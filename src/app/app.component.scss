@@ -13,7 +13,8 @@ app-product,
 app-stock,
 app-product-list,
 app-product-add,
-app-stock-add {
+app-stock-add,
+app-product-single {
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -25,4 +26,11 @@ app-navigation {
   position: fixed;
   width: 100%;
   bottom: 0;
+}
+
+app-product-item {
+  display: flex;
+}
+app-product-item:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }

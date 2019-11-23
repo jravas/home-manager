@@ -11,6 +11,8 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { ProductAddComponent } from './views/product-add/product-add.component';
 import { ProductSingleComponent } from './views/product-single/product-single.component';
 
+import { SharedComponentsModule } from 'src/app/components/shared-components.module';
+
 @NgModule({
   declarations: [
     ProductComponent,
@@ -22,7 +24,8 @@ import { ProductSingleComponent } from './views/product-single/product-single.co
     CommonModule,
     RouterModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    SharedComponentsModule
   ],
   exports: [ProductComponent, ProductSingleComponent]
 })

@@ -13,6 +13,8 @@ import { addToStock } from '../../../stock/store/stock.actions';
 interface StockFormValues {
   name: string;
   price: number;
+  amount: number;
+  unit: string;
 }
 
 @Component({
@@ -23,7 +25,10 @@ interface StockFormValues {
 export class StockAddComponent implements OnInit, OnDestroy {
   eventSubscription: Subscription;
   productForm = this.fb.group({
-    price: ['']
+    price: [''],
+    quantity: [''],
+    amount: [''],
+    unit: ['']
   });
   constructor(
     private fb: FormBuilder,
@@ -36,22 +41,31 @@ export class StockAddComponent implements OnInit, OnDestroy {
     this.eventSubscription = this.evenetEmmiterService.submitFormEvent.subscribe(
       () => this.addProduct()
     );
+    this.loadProduct();
   }
 
   ngOnDestroy() {
     this.eventSubscription.unsubscribe();
   }
 
+  loadProduct() {
+    const { quantity } = this.evenetEmmiterService.product;
+    this.productForm.get('quantity').patchValue(quantity);
+  }
+
   addProduct() {
-    const formValue = this.productForm.value as StockFormValues;
+    const { price, amount, unit } = this.productForm.value as StockFormValues;
     const { name, tag, quantity } = this.evenetEmmiterService.product;
+
     const stockItem: IStockItem = new StockItem(
       uuid(),
       name,
       tag,
-      formValue.price,
+      price,
       quantity,
-      Date.now()
+      Date.now(),
+      amount,
+      unit
     );
 
     this.store.dispatch(addToStock(stockItem));

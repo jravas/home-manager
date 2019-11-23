@@ -1,0 +1,30 @@
+.stock-item {
+  padding: 12px 20px;
+  flex: 1;
+  .product-item__title {
+    margin-bottom: 8px;
+  }
+}
+
+.product-item__attribute-wrapper {
+  display: flex;
+}
+
+.product-item__attribute {
+  &:not(:last-child) {
+    margin-right: 12px;
+  }
+}
+
+.product-item__attribute__label {
+  font-size: 10px;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+  opacity: 0.8;
+}
+
+.product-item__attribute__value {
+  font-size: 11px;
+  text-align: center;
+}
