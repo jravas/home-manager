@@ -7,55 +7,55 @@
 - [x] Name
 - [x] Suggest tag
 - [x] Edit tag
-- [] On mobile scroll to input
-- [] Toggle type : simple, custom
-- [] Load attributes specific to tag
-- [] Quantity is defaul attribute
-- [] Atributes: brand, unit
-- [] https://mathjs.org/docs/datatypes/units.html
-- [] Barcode scan (Lock code after 5 scaned results)
+- [ ] On mobile scroll to input
+- [ ] Toggle type : simple, custom
+- [ ] Load attributes specific to tag
+- [ ] Quantity is defaul attribute
+- [ ] Atributes: brand, unit
+- [ ] https://mathjs.org/docs/datatypes/units.html
+- [ ] Barcode scan (Lock code after 5 scaned results)
 - [x] Package size
 
 ### Product single
 
 - [x] Name
 - [x] Date & actions
-- [] Product history
-- [] Toggle type
-- [] Add barcode
+- [ ] Product history
+- [ ] Toggle type
+- [ ] Add barcode
 
 ### Stock
 
-- [] Shopping history timeline / grouped view
-- [] When product is added to stock remove itcrom products list
+- [ ] Shopping history timeline / grouped view
+- [ ] When product is added to stock remove itcrom products list
 
 ### Stock single
 
-- [] Use item/ partial use
-- [] Display item groups divided bi shopping date
-- [] Add to stock no name displayed
+- [ ] Use item/ partial use
+- [ ] Display item groups divided bi shopping date
+- [ ] Add to stock no name displayed
 
 ### Settings
 
-- [] Turn of animations
-- [] Change currency
-- [] Export csv, excell
+- [ ] Turn of animations
+- [ ] Change currency
+- [ ] Export csv, excell
 
 ### General
 
-- [] Product - mark as purchuased
-- [] Stock - mark as used
+- [ ] Product - mark as purchuased
+- [ ] Stock - mark as used
 - [x] Change date to timestamp Date.now()
-- [] Confirm modal for delete
+- [ ] Confirm modal for delete
 
 ### Price leader board
 
-- [] Allow to save location where product was bought
+- [ ] Allow to save location where product was bought
 
 ### UI
 
-- [] Product add save button
-- [] Product list delete/add to stock selected
+- [ ] Product add save button
+- [ ] Product list delete/add to stock selected
 
 ---
 
