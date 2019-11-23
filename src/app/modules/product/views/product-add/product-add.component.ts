@@ -1,9 +1,16 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  ViewChild,
+  ElementRef
+} from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Store, select } from '@ngrx/store';
 import * as uuid from 'uuid/v1';
 import { Subscription } from 'rxjs';
+import Quagga from 'quagga';
 
 import { Product } from '../../models/product';
 import { addProduct } from '../../store/product.actions';
@@ -23,6 +30,7 @@ interface ProductFormValues {
   styleUrls: ['./product-add.component.scss']
 })
 export class ProductAddComponent implements OnInit, OnDestroy {
+  @ViewChild('barcode', { read: ElementRef }) barcode: ElementRef;
   productForm = this.fb.group({
     name: [''],
     tag: [''],
@@ -31,6 +39,7 @@ export class ProductAddComponent implements OnInit, OnDestroy {
   productsSubscription: Subscription;
   products: Product[];
   eventSubscription: Subscription;
+  scanedCode: string;
 
   constructor(
     private fb: FormBuilder,
@@ -50,6 +59,51 @@ export class ProductAddComponent implements OnInit, OnDestroy {
       this.productsSubscription.unsubscribe();
     }
     this.eventSubscription.unsubscribe();
+  }
+
+  initScan() {
+    console.log(navigator.hardwareConcurrency);
+    Quagga.init(
+      {
+        inputStream: {
+          name: 'Live',
+          type: 'LiveStream',
+          target: this.barcode.nativeElement
+        },
+        decoder: {
+          readers: ['ean_reader', 'ean_8_reader'],
+          debug: {
+            showCanvas: true,
+            showPatches: true,
+            showFoundPatches: true,
+            showSkeleton: true,
+            showLabels: true,
+            showPatchLabels: true,
+            showRemainingPatchLabels: true,
+            boxFromPatches: {
+              showTransformed: true,
+              showTransformedBox: true,
+              showBB: true
+            }
+          }
+        }
+      },
+      err => {
+        if (err) {
+          console.log(err);
+          return;
+        }
+        console.log('Initialization finished. Ready to start');
+        Quagga.start();
+      }
+    );
+    Quagga.onDetected(result => {
+      console.log(
+        'Barcode detected and processed : [' + result.codeResult.code + ']',
+        result
+      );
+      this.scanedCode = result.codeResult.code;
+    });
   }
 
   addProduct() {
@@ -81,5 +135,9 @@ export class ProductAddComponent implements OnInit, OnDestroy {
     event.preventDefault();
     this.productForm.controls.tag.setValue(product.tag);
     this.productForm.controls.name.setValue(product.name);
+  }
+
+  scanBarcode() {
+    this.initScan();
   }
 }
