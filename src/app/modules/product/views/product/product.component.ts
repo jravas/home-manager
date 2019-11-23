@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy, ViewEncapsulation } from '@angular/core';
 import { Store, select } from '@ngrx/store';
-import { Observable, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { deleteSelected } from '../../store/product.actions';
-import { Product } from '../../models/product';
+import { IProduct } from '../../models/product';
 import { State } from '../../store/product.reducer';
 @Component({
   selector: 'app-product',
@@ -12,7 +12,7 @@ import { State } from '../../store/product.reducer';
 })
 export class ProductComponent implements OnInit, OnDestroy {
   productsSubscription: Subscription;
-  products: Product[];
+  products: IProduct[];
   numberOfSelected: number;
   isMoreOpen = false;
 
@@ -36,7 +36,7 @@ export class ProductComponent implements OnInit, OnDestroy {
     this.isMoreOpen = !this.isMoreOpen;
   }
 
-  sortProducts(products: Product[]) {
+  sortProducts(products: IProduct[]) {
     return products.sort((a, b) => b.date - a.date);
   }
 

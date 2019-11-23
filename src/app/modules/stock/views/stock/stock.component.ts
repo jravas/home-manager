@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Subscription } from 'rxjs';
-import { StockItem } from '../../models/stock-item';
+import { IStockItem } from '../../models/stock-item';
 import { State } from '../../store/stock.reducer';
 
 @Component({
@@ -12,7 +12,7 @@ import { State } from '../../store/stock.reducer';
 })
 export class StockComponent implements OnInit {
   stocksSubscription: Subscription;
-  stockItems: StockItem[];
+  stockItems: IStockItem[];
 
   constructor(public store: Store<State>) {}
 

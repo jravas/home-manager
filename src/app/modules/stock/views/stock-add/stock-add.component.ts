@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 
 import { State } from '../../store/stock.reducer';
 import { EvenetEmmiterService } from '../../../../services/evenet-emmiter.service';
-import { StockItem } from '../../models/stock-item';
+import { StockItem, IStockItem } from '../../models/stock-item';
 import { addToStock } from '../../../stock/store/stock.actions';
 
 interface StockFormValues {
@@ -45,7 +45,7 @@ export class StockAddComponent implements OnInit, OnDestroy {
   addProduct() {
     const formValue = this.productForm.value as StockFormValues;
     const { name, tag, quantity } = this.evenetEmmiterService.product;
-    const stockItem = new StockItem(
+    const stockItem: IStockItem = new StockItem(
       uuid(),
       name,
       tag,

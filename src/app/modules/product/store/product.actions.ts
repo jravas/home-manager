@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { Product } from '../models/product';
+import { IProduct } from '../models/product';
 
 enum ProductActions {
   AddProduct = 'product/add',
@@ -9,7 +9,7 @@ enum ProductActions {
 
 export const addProduct = createAction(
   ProductActions.AddProduct,
-  props<Product>()
+  props<IProduct>()
 );
 
 export const deleteProduct = createAction(

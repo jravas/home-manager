@@ -5,14 +5,15 @@ import { Store, select } from '@ngrx/store';
 import { getFromStockById } from '../../store/stock.selectors';
 import { State } from '../../store/stock.reducer';
 import { deleteStockItem } from '../../store/stock.actions';
+import { IStockItem } from '../../models/stock-item';
 @Component({
   selector: 'app-stock-single',
   templateUrl: './stock-single.component.html',
   styleUrls: ['./stock-single.component.scss']
 })
 export class StockSingleComponent implements OnInit {
-  product;
-  id;
+  product: IStockItem;
+  id: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -26,7 +27,6 @@ export class StockSingleComponent implements OnInit {
       this.store
         .pipe(select(getFromStockById, this.id))
         .subscribe(product => (this.product = product));
-      // this.productO.subscribe(t => console.log(t));
     });
   }
 

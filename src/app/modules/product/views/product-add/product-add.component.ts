@@ -12,7 +12,7 @@ import * as uuid from 'uuid/v1';
 import { Subscription } from 'rxjs';
 import Quagga from 'quagga';
 
-import { Product } from '../../models/product';
+import { Product, IProduct } from '../../models/product';
 import { addProduct } from '../../store/product.actions';
 import { State } from '../../store/product.reducer';
 import { getProductsWithTag } from '../../store/product.selectors';
@@ -37,7 +37,7 @@ export class ProductAddComponent implements OnInit, OnDestroy {
     quantity: [1]
   });
   productsSubscription: Subscription;
-  products: Product[];
+  products: IProduct[];
   eventSubscription: Subscription;
   scanedCode: string;
 
@@ -124,14 +124,14 @@ export class ProductAddComponent implements OnInit, OnDestroy {
   getProductsWithTag(tag: string) {
     this.productsSubscription = this.store
       .pipe(select(getProductsWithTag, tag))
-      .subscribe((products: Product[]) => {
+      .subscribe((products: IProduct[]) => {
         this.products = products.filter(
           (product, index, self) =>
             index === self.findIndex(p => p.tag === product.tag)
         );
       });
   }
-  selectTag(event: MouseEvent, product: Product) {
+  selectTag(event: MouseEvent, product: IProduct) {
     event.preventDefault();
     this.productForm.controls.tag.setValue(product.tag);
     this.productForm.controls.name.setValue(product.name);

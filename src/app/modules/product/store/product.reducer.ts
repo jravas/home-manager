@@ -1,9 +1,9 @@
 import { createReducer, on } from '@ngrx/store';
 import { addProduct, deleteProduct, deleteSelected } from './product.actions';
-import { Product } from '../models/product';
+import { IProduct } from '../models/product';
 
 export interface State {
-  products: Product[];
+  products: IProduct[];
 }
 
 export const initialState: State = {

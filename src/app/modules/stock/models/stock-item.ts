@@ -8,3 +8,12 @@ export class StockItem {
     public date: number
   ) {}
 }
+
+export interface IStockItem {
+  id: string;
+  name: string;
+  tag: string;
+  price: number;
+  quantity: number;
+  date: number;
+}

@@ -1,8 +1,8 @@
 import { createReducer, on } from '@ngrx/store';
 import { addToStock, deleteStockItem } from './stock.actions';
-import { StockItem } from '../models/stock-item';
+import { IStockItem } from '../models/stock-item';
 export interface State {
-  stock: StockItem[];
+  stock: IStockItem[];
 }
 
 export const initialState: State = {
