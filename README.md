@@ -2,6 +2,16 @@
 
 ## TODO
 
+### General
+
+- [ ] Product - mark as purchuased
+- [ ] Stock - mark as used
+- [x] Change date to timestamp Date.now()
+- [ ] Confirm modal for delete
+- [ ] Add empty states
+- [ ] Add loaders
+- [ ] Connect with firebase
+
 ### Add product
 
 - [x] Name
@@ -40,13 +50,6 @@
 - [ ] Turn of animations
 - [ ] Change currency
 - [ ] Export csv, excell
-
-### General
-
-- [ ] Product - mark as purchuased
-- [ ] Stock - mark as used
-- [x] Change date to timestamp Date.now()
-- [ ] Confirm modal for delete
 
 ### Price leader board
 
