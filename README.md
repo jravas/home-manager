@@ -12,6 +12,9 @@
 - [ ] Add loaders
 - [ ] Connect with firebase
 - [ ] Add to stock refreshing issue with service
+- [ ] Disable zoom on phones
+- [ ] Change shadow
+- [ ] Remove this product from shopping list history
 
 ### Add product
 
