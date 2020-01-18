@@ -11,10 +11,17 @@
 - [ ] Add empty states
 - [ ] Add loaders
 - [ ] Connect with firebase
+- [ ] Login/Register
+- [ ] Offline/Online stauts icon
+- [ ] Sync products after adding them offline (Open sync modal)
 - [ ] Add to stock refreshing issue with service
 - [ ] Disable zoom on phones
 - [ ] Change shadow
 - [ ] Remove this product from shopping list history
+- [ ] Add button bouncing visual issue
+- [ ] Add & Scann button on Product & Stock list
+  - When scanning products and they are added on product list, remove them from product list and add to stock
+    if quantity of products is bigger than one prompt user to select no items to add to stock/remove from product list
 
 ### Add product
 
@@ -34,14 +41,18 @@
 
 - [x] Name
 - [x] Date & actions
-- [ ] Product history
+- [x] Product history
 - [ ] Toggle type
 - [ ] Add barcode
 
 ### Stock
 
 - [ ] Shopping history timeline / grouped view
-- [ ] When product is added to stock remove itcrom products list
+- [ ] When product is added to stock remove it from products list
+- [ ] Customizable order of product atributes
+- [ ] Delete from stock -- only if incorrectly enetered
+- [ ] Remove form stock option but not delete but consumed
+- [ ] Stock history/Consumed items
 
 ### Stock single
 
